@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class CrowMover : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    #region Variables
 
-    // Update is called once per frame
-    void Update()
+    #endregion
+
+    #region Setup
+
+    #endregion
+
+    #region Functions
+    public void Move(Vector3 moveVector)
     {
-        
+
     }
+    #endregion
 }
