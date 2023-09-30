@@ -32,24 +32,54 @@ public class PlayerInput : MonoBehaviour
         if (crowController == null) return;
 
         HandleMovementInput();
-        HandleMovementInput();
+        HandleJumpInput();
         HandleWingInput();
     }
 
     #region Input Handling
     private void HandleMovementInput()
     {
+        // Assemble Movement Vector --> Send it to CrowController
+        Vector3 moveVector = Vector3.zero;
 
+        // Check for Directional Inputs
+        #region Directions
+        if (Input.GetKey(ForwardKey)) 
+        { moveVector += Vector3.forward; }
+        if (Input.GetKey(LeftwardKey)) 
+        { moveVector += Vector3.left; }
+        if (Input.GetKey(BackwardKey)) 
+        { moveVector += Vector3.back; }
+        if (Input.GetKey(RightwardKey)) 
+        { moveVector += Vector3.right; }
+        #endregion
+
+        // If input is not zero, send it to the Controller
+        if (moveVector == Vector3.zero) return;
+
+        //crowController
     }
 
     private void HandleJumpInput()
     {
+        // Check if Jumpkey was pressed
+        if (Input.GetKeyDown(JumpKey)) 
+        {
 
+        }
     }
 
     private void HandleWingInput()
     {
+        // Check if WingKeys were pressed
+        if (Input.GetKeyDown(WingLeftKey)) 
+        {
 
+        }
+        if (Input.GetKeyDown(WingRightKey))
+        {
+
+        }
     }
 
     #endregion
