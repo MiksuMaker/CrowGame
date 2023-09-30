@@ -7,7 +7,9 @@ public class MoveType : ScriptableObject
 {
     public virtual void ExecuteMove(CrowMover mover, Vector3 moveVector)
     {
-        // Movement Logic here
+        // Move the Crow
+        mover.rb.MovePosition(mover.transform.position 
+                                += moveVector * mover.currentMoveStats.walkSpeed * Time.deltaTime);
 
     }
 }

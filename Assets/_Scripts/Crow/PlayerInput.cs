@@ -57,7 +57,7 @@ public class PlayerInput : MonoBehaviour
         // If input is not zero, send it to the Controller
         if (moveVector == Vector3.zero) return;
 
-        //crowController
+        crowController.ReceiveMovementInput(moveVector.normalized);
     }
 
     private void HandleJumpInput()
@@ -65,7 +65,7 @@ public class PlayerInput : MonoBehaviour
         // Check if Jumpkey was pressed
         if (Input.GetKeyDown(JumpKey)) 
         {
-
+            //crowController
         }
     }
 
