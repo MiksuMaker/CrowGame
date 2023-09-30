@@ -22,5 +22,10 @@ public class CrowController : MonoBehaviour
         // Relay the information to the CrowMover
         mover.Move(moveVector);
     }
+
+    public void ReceiveJumpInput()
+    {
+        mover.Jump();
+    }
     #endregion
 }

@@ -12,4 +12,11 @@ public class MoveType : ScriptableObject
                                 += moveVector * mover.currentMoveStats.walkSpeed * Time.deltaTime);
 
     }
+
+    public virtual void ExecuteJump(CrowMover mover)
+    {
+        // Jump the Crow
+        mover.rb.AddForce(Vector3.up * mover.currentMoveStats.jumpPower,
+                                                ForceMode.VelocityChange);
+    }
 }

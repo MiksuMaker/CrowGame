@@ -65,7 +65,7 @@ public class PlayerInput : MonoBehaviour
         // Check if Jumpkey was pressed
         if (Input.GetKeyDown(JumpKey)) 
         {
-            //crowController
+            crowController.ReceiveJumpInput();
         }
     }
 

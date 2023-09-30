@@ -11,6 +11,9 @@ public class CrowMover : MonoBehaviour
     [HideInInspector] public Rigidbody rb;
 
     [HideInInspector] public Vector3 currentMoveVector = Vector3.zero;
+    
+    // Jumping
+    //bool
     #endregion
 
     #region Setup
@@ -31,5 +34,14 @@ public class CrowMover : MonoBehaviour
         currentMoveType.ExecuteMove(this, moveVector);
     }
 
+    public void Jump()
+    {
+        // Check for MoveType
+        if (currentMoveType == null) { Debug.Log("No MoveType available"); }
+        if (currentMoveStats == null) { Debug.Log("No MoveStats available"); }
+
+        // Execute Jumping
+        currentMoveType.ExecuteJump(this);
+    }
     #endregion
 }
