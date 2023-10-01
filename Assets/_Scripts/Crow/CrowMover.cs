@@ -7,6 +7,7 @@ public class CrowMover : MonoBehaviour
     #region Variables
     Camera pCam;
     CrowJumper jumper;
+    CrowController controller;
     [HideInInspector] public CrowFlyer flyer;
     CrowGravity gravity;
     CrowGraphicsController graphics;
@@ -32,6 +33,7 @@ public class CrowMover : MonoBehaviour
         gravity = GetComponent<CrowGravity>();
         graphics = GetComponentInChildren<CrowGraphicsController>();
         flyer = GetComponent<CrowFlyer>();
+        controller = GetComponent<CrowController>();
 
         rb = GetComponent<Rigidbody>();
     }
@@ -48,6 +50,8 @@ public class CrowMover : MonoBehaviour
         // Execute Movement
         if (flyer.flying == false)
         {
+            controller.RotateGraphicsTowardsMovement(moveVector);
+
             // Store the LastMoveVector
             lastMoveVector = moveVector;
 
@@ -86,6 +90,8 @@ public class CrowMover : MonoBehaviour
 
         lastMoveVector = graphics.transform.forward; // Force it to fly straight forwards
         currentMoveType = flyer.flyMoveType;
+
+        flyer.UpdateFlightStats();
 
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
