@@ -6,6 +6,7 @@ using UnityEngine;
 public class MoveStats : ScriptableObject
 {
     public float walkSpeed;
+    //public float MAXwalkSpeed;
 
     public float jumpPower;
 }

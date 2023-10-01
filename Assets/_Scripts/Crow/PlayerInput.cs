@@ -13,7 +13,11 @@ public class PlayerInput : MonoBehaviour
     KeyCode BackwardKey= KeyCode.S;
     KeyCode RightwardKey= KeyCode.D;
 
+    Vector3 desiredNextMovement = Vector3.zero;
+
     KeyCode JumpKey = KeyCode.Space;
+
+    bool desiredJumpInput = false;
 
     KeyCode WingLeftKey = KeyCode.Q;
     KeyCode WingRightKey = KeyCode.E;
@@ -23,7 +27,8 @@ public class PlayerInput : MonoBehaviour
     private void Start()
     {
         // Find crowController
-        crowController = FindObjectOfType<CrowController>();
+        //crowController = FindObjectOfType<CrowController>();
+        crowController = GetComponent<CrowController>();
     }
     #endregion
     private void Update()
@@ -36,6 +41,23 @@ public class PlayerInput : MonoBehaviour
         HandleWingInput();
     }
 
+    // Execute the inputs
+    private void FixedUpdate()
+    {
+        // Move
+        if (desiredNextMovement != Vector3.zero)
+        {
+            crowController.ReceiveMovementInput(desiredNextMovement);
+            desiredNextMovement = Vector3.zero;
+        }
+        // Jump
+        if (desiredJumpInput)
+        {
+            crowController.ReceiveJumpInput();
+            desiredJumpInput = false;
+        }
+    }
+
     #region Input Handling
     private void HandleMovementInput()
     {
@@ -45,19 +67,27 @@ public class PlayerInput : MonoBehaviour
         // Check for Directional Inputs
         #region Directions
         if (Input.GetKey(ForwardKey)) 
-        { moveVector += Vector3.forward; }
+        { 
+            moveVector += Vector3.forward;
+        }
         if (Input.GetKey(LeftwardKey)) 
-        { moveVector += Vector3.left; }
+        {
+            moveVector += Vector3.left;
+        }
         if (Input.GetKey(BackwardKey)) 
-        { moveVector += Vector3.back; }
+        { 
+            moveVector += Vector3.back;
+        }
         if (Input.GetKey(RightwardKey)) 
-        { moveVector += Vector3.right; }
+        { 
+            moveVector += Vector3.right; 
+        }
         #endregion
 
         // If input is not zero, send it to the Controller
         if (moveVector == Vector3.zero) return;
 
-        crowController.ReceiveMovementInput(moveVector.normalized);
+        desiredNextMovement = moveVector.normalized;
     }
 
     private void HandleJumpInput()
@@ -65,7 +95,7 @@ public class PlayerInput : MonoBehaviour
         // Check if Jumpkey was pressed
         if (Input.GetKeyDown(JumpKey)) 
         {
-            //crowController
+            desiredJumpInput = true;
         }
     }
 
