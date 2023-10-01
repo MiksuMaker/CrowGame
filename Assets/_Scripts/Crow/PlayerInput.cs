@@ -6,7 +6,6 @@ public class PlayerInput : MonoBehaviour
 {
     #region Variables
     CrowController crowController;
-    Camera pCam;
 
     // Input Keys
     KeyCode ForwardKey= KeyCode.W;
@@ -28,8 +27,8 @@ public class PlayerInput : MonoBehaviour
     private void Start()
     {
         // Find crowController
-        crowController = FindObjectOfType<CrowController>();
-        pCam = FindObjectOfType<Camera>();
+        //crowController = FindObjectOfType<CrowController>();
+        crowController = GetComponent<CrowController>();
     }
     #endregion
     private void Update()

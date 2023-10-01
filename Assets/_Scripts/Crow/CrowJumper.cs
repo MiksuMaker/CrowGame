@@ -7,7 +7,8 @@ public class CrowJumper : MonoBehaviour
     // Checks if jumping is allowed
 
     #region Variables
-    [SerializeField] float jumpCheckRadius = 0.5f;
+    [SerializeField] float jumpCheckRadius = 0.4f;
+    [SerializeField] float jumpCheckHeight = 0.1f;
 
     #endregion
 
@@ -21,25 +22,12 @@ public class CrowJumper : MonoBehaviour
         // Check if there is a collider below
         bool legalHit = false;
 
-        //if (Physics.Raycast(transform.position, -Vector3.up, jumpCheckDistance))
-        Collider[] colliders = Physics.OverlapSphere(transform.position + Vector3.up * 0.2f, jumpCheckRadius);
+        Collider[] colliders = Physics.OverlapSphere(transform.position + Vector3.up * jumpCheckHeight, jumpCheckRadius);
         if (colliders.Length >= 2)
         {
             // Hit
-            //Debug.DrawRay(transform.position, -Vector3.up * jumpCheckDistance, Color.green, 2f);
             legalHit = true;
         }
-        Debug.Log(colliders.Length);
-        //foreach (var c in colliders)
-        //{
-        //    if (c.transform.gameObject.layer != LayerMask.NameToLayer("Crow"))
-        //    {
-        //        legalHit = true;
-        //        break;
-        //    }
-        //}
-
-        //legalHit = Physics.CheckSphere(transform.position + -Vector3)
 
         return legalHit;
     }
