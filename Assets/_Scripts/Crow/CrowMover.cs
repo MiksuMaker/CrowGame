@@ -36,7 +36,7 @@ public class CrowMover : MonoBehaviour
         // Take Camera into account
 
         // Execute Movement
-        currentMoveType.ExecuteMove(this, moveVector);
+        currentMoveType.ExecuteMove(this, MoveAccordingToCamera(moveVector));
     }
 
     public void Jump()
@@ -51,13 +51,15 @@ public class CrowMover : MonoBehaviour
     #endregion
 
     #region Helpers
-    //private Vector3 MoveAccordingToCamera(Vector3 rawMoveVector)
-    //{
-    //    Vector3 resultVector = Vector3.zero;
+    private Vector3 MoveAccordingToCamera(Vector3 rawMoveInput)
+    {
+        float facing = pCam.transform.eulerAngles.y;
 
-    //    resultVector = new Vector3(pCam.transform.right.x * rawMoveVector.magnitude,
-    //                               0f,
-    //                               pCam.transform.forward.y * rawMoveVector.magnitude);
-    //}
+        Vector3 modifiedMoveInput = new Vector3(rawMoveInput.x, 0f, rawMoveInput.z);
+
+        Vector3 turnedInputs = Quaternion.Euler(0f, facing, 0f) * modifiedMoveInput;
+        Debug.Log(turnedInputs);
+        return turnedInputs;
+    }
     #endregion
 }
