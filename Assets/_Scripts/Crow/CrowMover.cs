@@ -7,6 +7,7 @@ public class CrowMover : MonoBehaviour
     #region Variables
     Camera pCam;
     CrowJumper jumper;
+    CrowGravity gravity;
 
     public MoveType currentMoveType;
     public MoveStats currentMoveStats;
@@ -24,6 +25,7 @@ public class CrowMover : MonoBehaviour
     {
         pCam = FindObjectOfType<Camera>();
         jumper = GetComponent<CrowJumper>();
+        gravity = GetComponent<CrowGravity>();
         rb = GetComponent<Rigidbody>();
     }
     #endregion
