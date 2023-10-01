@@ -6,20 +6,26 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/MoveTypes/Flight")]
 public class MoveTypeFlight : MoveType
 {
-    public virtual void ExecuteMove(CrowMover mover, Vector3 moveVector)
+    public override void ExecuteMove(CrowMover mover, Vector3 moveVector)
     {
-        // Move the Crow
-        mover.rb.MovePosition(mover.transform.position
-                                += moveVector * mover.currentMoveStats.walkSpeed * Time.deltaTime);
+        //// Move the Crow
+        //mover.rb.MovePosition(mover.transform.position
+        //                        += moveVector * mover.currentMoveStats.walkSpeed * Time.deltaTime);
+
+
+        //float rotation = moveVector.y;
+        //moveVector = new Vector3(moveVector.x, 0f, moveVector.z);
+        //Vector3 rotatedMoveVector = Quaternion.AngleAxis(moveVector.y, Vector3.up) * moveVector;
 
         // Fly Forwards
+        mover.rb.MovePosition(mover.transform.position
+                                //+= rotatedMoveVector * mover.flyer.currentFlightForwardSpeed * Time.deltaTime);
+                                += mover.lastMoveVector * mover.flyer.currentFlightForwardSpeed * Time.deltaTime);
 
     }
 
     public virtual void ExecuteJump(CrowMover mover)
     {
-        // Jump the Crow
-        //mover.rb.AddForce(Vector3.up * mover.currentMoveStats.jumpPower,
-        //                                        ForceMode.VelocityChange);
+        // Do Nothing
     }
 }

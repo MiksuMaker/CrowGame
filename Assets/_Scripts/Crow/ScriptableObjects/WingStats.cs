@@ -6,9 +6,9 @@ using UnityEngine;
 public class WingStats : ScriptableObject
 {
     [Header("Flight Speed")]
-    [Tooltip("How fast the crow flies forward with this")]
-    public float flightSpeed = 5f;
-    public float flightSpeed_wo_Pair = 1f;
+    [Tooltip("Base Flight Speed is modified by this")]
+    public float flightSpeedMultiplier = 1f;
+    public float flightSpeedMultiplier_wo_Pair = 1f;
 
     [Header("Flight Gravity")]
     [Tooltip("Gravity modifier for the wing. It will decrease gravity by that amount")]

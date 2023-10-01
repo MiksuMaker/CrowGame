@@ -8,7 +8,7 @@ public class CrowGravity : MonoBehaviour
     CrowMover mover;
 
     [SerializeField, Range(0f, 20f)] private float gravity = 0;
-    [SerializeField] private float DEFAULT_gravity = 9.81f;
+    [SerializeField] public float DEFAULT_gravity = 9.81f;
 
     #endregion
 

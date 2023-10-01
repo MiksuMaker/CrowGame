@@ -23,6 +23,8 @@ public class CrowFlyer : MonoBehaviour
 
     [Header("Base stats")]
     [SerializeField] float BASE_flightFrowardSpeed = 1f;
+
+    [HideInInspector] public bool flying = false;
     #endregion
 
     #region Setup
@@ -31,8 +33,25 @@ public class CrowFlyer : MonoBehaviour
         mover = GetComponent<CrowMover>();
         jumper = GetComponent<CrowJumper>();
         gravity = GetComponent<CrowGravity>();
+
+        UpdateFlightStats();
     }
     #endregion
+
+    private void FixedUpdate()
+    {
+        if (flying)
+        {
+            // Continuous flight
+            mover.MoveForwards(currentTurning);
+
+            // Check if touching the ground
+            if (jumper.CheckJumpDistance())
+            {
+                mover.ExitFlight();
+            }
+        }
+    }
 
     #region Update Stats
     [ContextMenu("Update Flight Stats")]
@@ -46,16 +65,16 @@ public class CrowFlyer : MonoBehaviour
         {
             // BOTH WINGS
             case (true, true):
-                currentFlightForwardSpeed = leftWing.flightSpeed + rightWing.flightSpeed;
+                currentFlightForwardSpeed = BASE_flightFrowardSpeed * leftWing.flightSpeedMultiplier * rightWing.flightSpeedMultiplier;
                 currentTurning = -leftWing.turnStrength + rightWing.turnStrength;
                 currentJumpBoost = leftWing.jumpBoost + rightWing.jumpBoost;
-                currentGravityModifier = leftWing.gravityModifier + rightWing.gravityModifier;
+                currentGravityModifier = Mathf.Max(0f, leftWing.gravityModifier + rightWing.gravityModifier);
                 break;
 
             // Only Left Wing
             case (true, false):
 
-                currentFlightForwardSpeed = leftWing.flightSpeed_wo_Pair;
+                currentFlightForwardSpeed = BASE_flightFrowardSpeed * leftWing.flightSpeedMultiplier_wo_Pair;
                 currentTurning = -leftWing.turnStrength_wo_Pair;
                 currentJumpBoost = leftWing.jumpBoost_wo_Pair;
                 currentGravityModifier = leftWing.gravityModifier_wo_Pair;
@@ -64,7 +83,7 @@ public class CrowFlyer : MonoBehaviour
             // Only Right Wing
             case (false, true):
 
-                currentFlightForwardSpeed = rightWing.flightSpeed_wo_Pair;
+                currentFlightForwardSpeed = BASE_flightFrowardSpeed * rightWing.flightSpeedMultiplier_wo_Pair;
                 currentTurning = rightWing.turnStrength_wo_Pair;
                 currentJumpBoost = rightWing.jumpBoost_wo_Pair;
                 currentGravityModifier = rightWing.gravityModifier_wo_Pair;

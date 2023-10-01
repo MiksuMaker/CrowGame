@@ -946,6 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4b47f43655cef44bd4737f08a300fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpActivationThresholdTime: 0.1
 --- !u!4 &1104311995
 Transform:
   m_ObjectHideFlags: 0
@@ -1186,7 +1187,7 @@ Transform:
   m_GameObject: {fileID: 1647990384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 15, y: 1, z: 15}
+  m_LocalScale: {x: 30, y: 1, z: 60}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1130240657}
@@ -1403,6 +1404,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5abe33aaa45d8554f98e63f412da3371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyMoveType: {fileID: 11400000, guid: 525285bfeb9d6414f9fc58d4fb8d5d4f, type: 2}
+  leftWing: {fileID: 11400000, guid: 40d8ecb8a8bf2d745b074a6d6bf017d8, type: 2}
+  rightWing: {fileID: 11400000, guid: 297763b8e01b2bd4bb08c208863cb1e4, type: 2}
+  currentFlightForwardSpeed: 7
+  currentTurning: 20
+  currentJumpBoost: 2
+  currentGravityModifier: 2
+  BASE_flightFrowardSpeed: 5
+  flying: 0
 --- !u!1001 &8792895122394520862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1410,6 +1420,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8792895121763765106, guid: 16338e0de579bbc4799d0afffeceed8f,
+        type: 3}
+      propertyPath: jumpActivationThresholdTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792895121763765108, guid: 16338e0de579bbc4799d0afffeceed8f,
+        type: 3}
+      propertyPath: baseMoveType
+      value: 
+      objectReference: {fileID: 11400000, guid: edd1b60267b62c045b15a64c4bb9a8a9,
+        type: 2}
     - target: {fileID: 8792895121763765110, guid: 16338e0de579bbc4799d0afffeceed8f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1464,6 +1485,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792895121763765111, guid: 16338e0de579bbc4799d0afffeceed8f,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 8792895121763765113, guid: 16338e0de579bbc4799d0afffeceed8f,
         type: 3}
