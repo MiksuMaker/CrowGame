@@ -6,6 +6,7 @@ public class CrowMover : MonoBehaviour
 {
     #region Variables
     Camera pCam;
+    CrowJumper jumper;
 
     public MoveType currentMoveType;
     public MoveStats currentMoveStats;
@@ -13,7 +14,7 @@ public class CrowMover : MonoBehaviour
     [HideInInspector] public Rigidbody rb;
 
     [HideInInspector] public Vector3 currentMoveVector = Vector3.zero;
-    
+
     // Jumping
     //bool
     #endregion
@@ -22,6 +23,7 @@ public class CrowMover : MonoBehaviour
     private void Start()
     {
         pCam = FindObjectOfType<Camera>();
+        jumper = GetComponent<CrowJumper>();
         rb = GetComponent<Rigidbody>();
     }
     #endregion
@@ -46,7 +48,10 @@ public class CrowMover : MonoBehaviour
         if (currentMoveStats == null) { Debug.Log("No MoveStats available"); }
 
         // Execute Jumping
-        currentMoveType.ExecuteJump(this);
+        if (jumper.CheckJumpDistance())
+        {
+            currentMoveType.ExecuteJump(this);
+        }
     }
     #endregion
 
@@ -58,7 +63,6 @@ public class CrowMover : MonoBehaviour
         Vector3 modifiedMoveInput = new Vector3(rawMoveInput.x, 0f, rawMoveInput.z);
 
         Vector3 turnedInputs = Quaternion.Euler(0f, facing, 0f) * modifiedMoveInput;
-        Debug.Log(turnedInputs);
         return turnedInputs;
     }
     #endregion

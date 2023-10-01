@@ -210,6 +210,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crowlittleheadfacefixed
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06c2703cda4ac234995289b5fc28751a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06c2703cda4ac234995289b5fc28751a, type: 3}
 --- !u!4 &4463269 stripped
@@ -259,7 +264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 120353769}
   - component: {fileID: 120353770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,7 +868,8 @@ GameObject:
   - component: {fileID: 711562860}
   - component: {fileID: 711562859}
   - component: {fileID: 711562858}
-  m_Layer: 0
+  - component: {fileID: 711562861}
+  m_Layer: 10
   m_Name: CROW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,6 +949,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4b47f43655cef44bd4737f08a300fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &711562861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711562855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ce2be18debf07545bc3edfb20aa9b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpCheckRadius: 0.4
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,7 +1223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1127845501}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
