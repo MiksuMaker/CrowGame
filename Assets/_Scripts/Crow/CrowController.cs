@@ -27,7 +27,7 @@ public class CrowController : MonoBehaviour
         moveVector = MoveAccordingToCamera(moveVector);
 
         // Rotate graphics
-        RotateGraphicsTowardsMovement(moveVector);
+        //RotateGraphicsTowardsMovement(moveVector);
 
         // Relay the information to the CrowMover
         mover.Move(moveVector);
@@ -36,6 +36,12 @@ public class CrowController : MonoBehaviour
     public void ReceiveJumpInput()
     {
         mover.Jump();
+    }
+
+    public void ReceiveEnterFlightInput()
+    {
+        // Enter Flight if possible
+        mover.EnterFlight();
     }
     #endregion
 
@@ -50,7 +56,7 @@ public class CrowController : MonoBehaviour
         return turnedInputs;
     }
 
-    private void RotateGraphicsTowardsMovement(Vector3 dir)
+    public void RotateGraphicsTowardsMovement(Vector3 dir)
     {
         // Lerp towards movement direction
         graphics.RotateGraphicsTowards(dir);

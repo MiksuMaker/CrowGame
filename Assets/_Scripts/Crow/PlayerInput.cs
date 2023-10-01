@@ -8,16 +8,20 @@ public class PlayerInput : MonoBehaviour
     CrowController crowController;
 
     // Input Keys
-    KeyCode ForwardKey= KeyCode.W;
-    KeyCode LeftwardKey= KeyCode.A;
-    KeyCode BackwardKey= KeyCode.S;
-    KeyCode RightwardKey= KeyCode.D;
+    KeyCode ForwardKey = KeyCode.W;
+    KeyCode LeftwardKey = KeyCode.A;
+    KeyCode BackwardKey = KeyCode.S;
+    KeyCode RightwardKey = KeyCode.D;
 
     Vector3 desiredNextMovement = Vector3.zero;
 
     KeyCode JumpKey = KeyCode.Space;
+    bool jumpInput = false;
 
-    bool desiredJumpInput = false;
+    bool enterFlightInput = false;
+    [SerializeField] float jumpActivationThresholdTime = 0.1f;
+    bool jumpKeyIsBeingHeld = false;
+    float currentJumpKeyHoldTime = 0f;
 
     KeyCode WingLeftKey = KeyCode.Q;
     KeyCode WingRightKey = KeyCode.E;
@@ -51,10 +55,10 @@ public class PlayerInput : MonoBehaviour
             desiredNextMovement = Vector3.zero;
         }
         // Jump
-        if (desiredJumpInput)
+        if (jumpInput)
         {
             crowController.ReceiveJumpInput();
-            desiredJumpInput = false;
+            jumpInput = false;
         }
     }
 
@@ -66,21 +70,21 @@ public class PlayerInput : MonoBehaviour
 
         // Check for Directional Inputs
         #region Directions
-        if (Input.GetKey(ForwardKey)) 
-        { 
+        if (Input.GetKey(ForwardKey))
+        {
             moveVector += Vector3.forward;
         }
-        if (Input.GetKey(LeftwardKey)) 
+        if (Input.GetKey(LeftwardKey))
         {
             moveVector += Vector3.left;
         }
-        if (Input.GetKey(BackwardKey)) 
-        { 
+        if (Input.GetKey(BackwardKey))
+        {
             moveVector += Vector3.back;
         }
-        if (Input.GetKey(RightwardKey)) 
-        { 
-            moveVector += Vector3.right; 
+        if (Input.GetKey(RightwardKey))
+        {
+            moveVector += Vector3.right;
         }
         #endregion
 
@@ -90,25 +94,58 @@ public class PlayerInput : MonoBehaviour
         desiredNextMovement = moveVector.normalized;
     }
 
-    private void HandleJumpInput()
-    {
-        // Check if Jumpkey was pressed
-        if (Input.GetKeyDown(JumpKey)) 
-        {
-            desiredJumpInput = true;
-        }
-    }
 
     private void HandleWingInput()
     {
         // Check if WingKeys were pressed
-        if (Input.GetKeyDown(WingLeftKey)) 
+        if (Input.GetKeyDown(WingLeftKey))
         {
 
         }
         if (Input.GetKeyDown(WingRightKey))
         {
 
+        }
+    }
+
+    #endregion
+
+    #region Jumping
+    private void HandleJumpInput()
+    {
+        // Check if Jumpkey was pressed
+        if (Input.GetKeyDown(JumpKey))
+        {
+            // Do Jump
+            jumpInput = true;
+            // Start the timer
+            jumpKeyIsBeingHeld = true;
+
+        }
+
+        // Check if JumpKey threshold has been passed
+        if (jumpKeyIsBeingHeld)
+        {
+            // Count it up
+            currentJumpKeyHoldTime += Time.deltaTime;
+
+            if (currentJumpKeyHoldTime >= jumpActivationThresholdTime)
+            {
+                // Enter flight
+                crowController.ReceiveEnterFlightInput();
+                // Deactivate jump Key
+                jumpKeyIsBeingHeld = false;
+            }
+        }
+        else
+        {
+            currentJumpKeyHoldTime = 0f;
+        }
+
+        if (Input.GetKeyUp(JumpKey))
+        {
+            // End the timer
+            jumpKeyIsBeingHeld = false;
         }
     }
 
