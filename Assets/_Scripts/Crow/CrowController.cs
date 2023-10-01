@@ -37,6 +37,12 @@ public class CrowController : MonoBehaviour
     {
         mover.Jump();
     }
+
+    public void ReceiveEnterFlightInput()
+    {
+        // Enter Flight if possible
+        mover.EnterFlight();
+    }
     #endregion
 
     #region Helpers

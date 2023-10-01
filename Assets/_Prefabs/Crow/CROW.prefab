@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 8792895121763765108}
   - component: {fileID: 8792895121763765107}
   - component: {fileID: 8792895121763765104}
+  - component: {fileID: 1916837883}
   m_Layer: 10
   m_Name: CROW
   m_TagString: Untagged
@@ -100,7 +101,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &8792895121763765106
 MonoBehaviour:
@@ -114,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4b47f43655cef44bd4737f08a300fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpActivationThresholdTime: 0.3
 --- !u!114 &8792895121763765109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,10 +140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eab67d34e915ae488992adbd209a888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyer: {fileID: 0}
+  baseMoveType: {fileID: 11400000, guid: edd1b60267b62c045b15a64c4bb9a8a9, type: 2}
   currentMoveType: {fileID: 11400000, guid: edd1b60267b62c045b15a64c4bb9a8a9, type: 2}
   currentMoveStats: {fileID: 11400000, guid: 13017aa26559bc24b99a2156f8203da9, type: 2}
   rb: {fileID: 0}
-  currentMoveVector: {x: 0, y: 0, z: 0}
+  lastMoveVector: {x: 0, y: 0, z: 0}
 --- !u!114 &8792895121763765107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +174,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravity: 9.81
   DEFAULT_gravity: 9.81
+--- !u!114 &1916837883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8792895121763765113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abe33aaa45d8554f98e63f412da3371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flyMoveType: {fileID: 11400000, guid: 525285bfeb9d6414f9fc58d4fb8d5d4f, type: 2}
+  leftWing: {fileID: 11400000, guid: 40d8ecb8a8bf2d745b074a6d6bf017d8, type: 2}
+  rightWing: {fileID: 11400000, guid: 297763b8e01b2bd4bb08c208863cb1e4, type: 2}
+  currentFlightForwardSpeed: 7
+  currentTurning: 20
+  currentJumpBoost: 2
+  currentGravityModifier: 2
+  BASE_flightFrowardSpeed: 5
+  flying: 0
 --- !u!1 &8792895122346569462
 GameObject:
   m_ObjectHideFlags: 0
