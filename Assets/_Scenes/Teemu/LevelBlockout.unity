@@ -3331,7 +3331,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832987192}
-  m_LocalRotation: {x: 0.122023344, y: 0.025981203, z: -0.003195294, w: 0.992182}
+  m_LocalRotation: {x: 0.122023314, y: 0.025981221, z: -0.0031952956, w: 0.992182}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3703,6 +3703,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CROW
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792895121763765113, guid: 16338e0de579bbc4799d0afffeceed8f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8792895122346569462, guid: 16338e0de579bbc4799d0afffeceed8f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16338e0de579bbc4799d0afffeceed8f, type: 3}
