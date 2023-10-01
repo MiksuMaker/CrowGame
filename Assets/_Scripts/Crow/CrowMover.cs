@@ -5,6 +5,8 @@ using UnityEngine;
 public class CrowMover : MonoBehaviour
 {
     #region Variables
+    Camera pCam;
+
     public MoveType currentMoveType;
     public MoveStats currentMoveStats;
 
@@ -19,6 +21,7 @@ public class CrowMover : MonoBehaviour
     #region Setup
     private void Start()
     {
+        pCam = FindObjectOfType<Camera>();
         rb = GetComponent<Rigidbody>();
     }
     #endregion
@@ -29,6 +32,8 @@ public class CrowMover : MonoBehaviour
         // Check for MoveType
         if (currentMoveType == null) { Debug.Log("No MoveType available"); }
         if (currentMoveStats == null) { Debug.Log("No MoveStats available"); }
+
+        // Take Camera into account
 
         // Execute Movement
         currentMoveType.ExecuteMove(this, moveVector);
@@ -43,5 +48,16 @@ public class CrowMover : MonoBehaviour
         // Execute Jumping
         currentMoveType.ExecuteJump(this);
     }
+    #endregion
+
+    #region Helpers
+    //private Vector3 MoveAccordingToCamera(Vector3 rawMoveVector)
+    //{
+    //    Vector3 resultVector = Vector3.zero;
+
+    //    resultVector = new Vector3(pCam.transform.right.x * rawMoveVector.magnitude,
+    //                               0f,
+    //                               pCam.transform.forward.y * rawMoveVector.magnitude);
+    //}
     #endregion
 }
