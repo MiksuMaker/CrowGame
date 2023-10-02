@@ -13,8 +13,8 @@ public class CrowGraphicsController : MonoBehaviour
     float deviation = 0.01f;
 
     [Header("Animation")]
-    [SerializeField, Range (0f, 3f)] float animationValue = 0f;
-    [SerializeField, Range (0f, 3f)] float targetAnimationValue = 0f;
+    [SerializeField, Range(0f, 3f)] float animationValue = 0f;
+    [SerializeField, Range(0f, 3f)] float targetAnimationValue = 0f;
     [Space]
     [SerializeField] float animationChangeLerpSpeedHigher = 0.1f;
     [SerializeField] float animationChangeLerpSpeedLower = 0.02f;

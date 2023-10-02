@@ -26,7 +26,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] float jumpActivationThresholdTime = 0.1f;
     bool jumpKeyIsBeingHeld = false;
     float currentJumpKeyHoldTime = 0f;
-    
+
     [Header("Wings")]
     [SerializeField] float wingDropThresholdTime = 0.2f;
     float currentLeftWingKeyHoldTime = 0f; float currentRIGHTWingKeyHoldTime = 0f;

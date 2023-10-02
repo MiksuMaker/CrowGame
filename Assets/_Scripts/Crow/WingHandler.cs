@@ -49,7 +49,7 @@ public class WingHandler : MonoBehaviour
             wings = wings.OrderBy(x => Vector3.SqrMagnitude(x.transform.position - transform.position)).ToArray();
         }
 
-        Debug.Log("Amount of wings: " + wings.Length);
+        //Debug.Log("Amount of wings: " + wings.Length);
 
         return wings[0].transform.GetComponent<Wing>();
     }
