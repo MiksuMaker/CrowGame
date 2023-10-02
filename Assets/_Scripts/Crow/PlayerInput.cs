@@ -116,9 +116,9 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyUp(WingLeftKey))
         {
             if (currentLeftWingKeyHoldTime >= wingDropThresholdTime)
-            { }
+            { Debug.Log("Left Wing DROP"); }
             else
-            { }
+            { Debug.Log("Left Wing PICKUP"); }
 
             // Reset timer
             currentLeftWingKeyHoldTime = 0f;
@@ -133,6 +133,8 @@ public class PlayerInput : MonoBehaviour
             // Reset timer
             currentRightWingKeyHoldTime = 0f;
         }
+
+        // Check nevertheless the if Player has reached the time limit
     }
 
     #endregion
