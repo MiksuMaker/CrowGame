@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff9be676b53b88d4e8163130764a426d, type: 3}
-  m_Name: Base Move Stats
+  m_Name: SlightlyMoreJump
   m_EditorClassIdentifier: 
   walkSpeed: 3
-  jumpPower: 5
+  jumpPower: 7
