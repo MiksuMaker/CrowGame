@@ -33,6 +33,11 @@ public class CrowController : MonoBehaviour
         mover.Move(moveVector);
     }
 
+    public void ReceiveIdleInput()
+    {
+        mover.Idle();
+    }
+
     public void ReceiveJumpInput()
     {
         mover.Jump();
