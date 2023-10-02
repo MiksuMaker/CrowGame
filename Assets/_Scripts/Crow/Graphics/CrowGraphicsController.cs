@@ -18,6 +18,10 @@ public class CrowGraphicsController : MonoBehaviour
     [Space]
     [SerializeField] float animationChangeLerpSpeedHigher = 0.1f;
     [SerializeField] float animationChangeLerpSpeedLower = 0.02f;
+
+    [Header("Wing placement")]
+    [SerializeField] public Transform leftWingPosition;
+    [SerializeField] public Transform rightWingPosition;
     #endregion
 
     #region Setup

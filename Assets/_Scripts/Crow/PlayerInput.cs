@@ -120,9 +120,9 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyUp(WingLeftKey))
         {
             if (currentLeftWingKeyHoldTime >= wingDropThresholdTime)
-            { Debug.Log("Left Wing DROP"); }
+            { crowController.ReceiveUnequipWingInput(true); }
             else
-            { Debug.Log("Left Wing PICKUP"); }
+            { crowController.ReceiveEquipWingInput(true); }
 
             // Reset timer
             currentLeftWingKeyHoldTime = 0f;
@@ -130,9 +130,9 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetKeyUp(WingRightKey))
         {
             if (currentLeftWingKeyHoldTime >= wingDropThresholdTime)
-            { }
+            { crowController.ReceiveUnequipWingInput(false); }
             else
-            { }
+            { crowController.ReceiveEquipWingInput(false); }
 
             // Reset timer
             currentRightWingKeyHoldTime = 0f;

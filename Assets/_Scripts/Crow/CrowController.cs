@@ -7,6 +7,7 @@ public class CrowController : MonoBehaviour
     #region Variables
     CrowMover mover;
     CrowGraphicsController graphics;
+    WingHandler wingHandler;
     Camera pCam;
     #endregion
 
@@ -17,6 +18,7 @@ public class CrowController : MonoBehaviour
         mover = GetComponent<CrowMover>();
         pCam = FindObjectOfType<Camera>();
         graphics = GetComponentInChildren<CrowGraphicsController>();
+        wingHandler = GetComponent<WingHandler>();
     }
     #endregion
 
@@ -47,6 +49,18 @@ public class CrowController : MonoBehaviour
     {
         // Enter Flight if possible
         mover.EnterFlight();
+    }
+    #endregion
+
+    #region Other Input
+    public void ReceiveEquipWingInput(bool leftWingSide)
+    {
+        wingHandler.TryEquip(leftWingSide);
+    }
+
+    public void ReceiveUnequipWingInput(bool leftWingSide)
+    {
+        wingHandler.TryUnEquipWing(leftWingSide);
     }
     #endregion
 
