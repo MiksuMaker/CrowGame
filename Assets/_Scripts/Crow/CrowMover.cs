@@ -22,6 +22,8 @@ public class CrowMover : MonoBehaviour
 
     [HideInInspector] public Vector3 lastMoveVector = Vector3.zero;
 
+    [SerializeField] private GameObject crowWalk;
+
     public enum State
     {
         idle, walk, jump, fly
@@ -79,6 +81,7 @@ public class CrowMover : MonoBehaviour
 
     public void Idle()
     {
+        crowWalk.SetActive(false);
         if (flyer.flying == false && jumper.CheckJumpDistance())
         {
             graphics.UpdateAnimation(CrowGraphicsController.Mode.idle);
@@ -91,6 +94,7 @@ public class CrowMover : MonoBehaviour
 
     public void MoveForwards(float turningModifier)
     {
+        crowWalk.SetActive(true);   
         // Check for MoveType
         if (currentMoveType == null) { Debug.Log("No MoveType available"); }
         if (currentMoveStats == null) { Debug.Log("No MoveStats available"); }
@@ -103,6 +107,7 @@ public class CrowMover : MonoBehaviour
 
     public void Jump()
     {
+        crowWalk.SetActive(false);
         // Check for MoveType
         if (currentMoveType == null) { Debug.Log("No MoveType available"); }
         if (currentMoveStats == null) { Debug.Log("No MoveStats available"); }
@@ -116,6 +121,7 @@ public class CrowMover : MonoBehaviour
 
     public void EnterFlight()
     {
+        crowWalk.SetActive(false);
         Debug.Log("Enter flight");
 
         lastMoveVector = graphics.transform.forward; // Force it to fly straight forwards
@@ -134,6 +140,7 @@ public class CrowMover : MonoBehaviour
 
     public void ExitFlight()
     {
+        crowWalk.SetActive(false);
         Debug.Log("Exiting Flight");
         currentMoveType = baseMoveType;
 
