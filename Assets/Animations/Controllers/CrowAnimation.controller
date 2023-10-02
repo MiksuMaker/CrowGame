@@ -9,7 +9,7 @@ AnimatorController:
   m_Name: CrowAnimation
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Blend
+  - m_Name: X
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -43,44 +43,44 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 9dad1f9ec1c58e44f9e370add6aaa24d, type: 2}
+    m_Motion: {fileID: 7400000, guid: b000b0d6d58e92c4e92634b8cdd104bd, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
+    m_TimeScale: 0.5
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: fee6969a09436f241bddeb4e5021d1ac, type: 2}
+    m_Motion: {fileID: 7400000, guid: df822f7d3ff96864d854467690e8fe15, type: 2}
     m_Threshold: 1
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
+    m_Position: {x: 0, y: 1}
+    m_TimeScale: 1.5
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 0cbeb547e3daf094888ad1620b1ec41d, type: 2}
+    m_Motion: {fileID: 7400000, guid: de6107fbffb21af418c9f13f8fb7a6d4, type: 2}
     m_Threshold: 2
-    m_Position: {x: 0, y: 1}
-    m_TimeScale: 1
+    m_Position: {x: 0, y: 2}
+    m_TimeScale: 1.5
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 2ac8efb71ea217a4b978caa01ede0f37, type: 2}
     m_Threshold: 3
-    m_Position: {x: 0, y: 2}
-    m_TimeScale: 1
+    m_Position: {x: 0, y: 3}
+    m_TimeScale: 1.5
     m_CycleOffset: 0
     m_DirectBlendParameter: Blend
     m_Mirror: 0
-  m_BlendParameter: Y
-  m_BlendParameterY: Blend
+  m_BlendParameter: X
+  m_BlendParameterY: Y
   m_MinThreshold: 0
   m_MaxThreshold: 3
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
-  m_BlendType: 0
+  m_BlendType: 2
 --- !u!1107 &1404263960499429858
 AnimatorStateMachine:
   serializedVersion: 6
