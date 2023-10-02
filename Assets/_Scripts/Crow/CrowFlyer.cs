@@ -12,8 +12,8 @@ public class CrowFlyer : MonoBehaviour
     [SerializeField] public MoveType flyMoveType;
 
     [Header("Wings")]
-    [SerializeField] public WingStats leftWing;
-    [SerializeField] public WingStats rightWing;
+    [SerializeField] WingStats leftWing;
+    [SerializeField] WingStats rightWing;
 
     [Header("Current Stats")]
     [SerializeField] public float currentFlightForwardSpeed = 0f;

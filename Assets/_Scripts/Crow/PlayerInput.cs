@@ -13,8 +13,8 @@ public class PlayerInput : MonoBehaviour
     KeyCode BackwardKey = KeyCode.S;
     KeyCode RightwardKey = KeyCode.D;
 
-    KeyCode WingLeftKey = KeyCode.E;
-    KeyCode WingRightKey = KeyCode.Q;
+    KeyCode WingLeftKey = KeyCode.Q;
+    KeyCode WingRightKey = KeyCode.E;
 
     KeyCode JumpKey = KeyCode.Space;
 
@@ -29,7 +29,7 @@ public class PlayerInput : MonoBehaviour
     
     [Header("Wings")]
     [SerializeField] float wingDropThresholdTime = 0.2f;
-    float currentLeftWingKeyHoldTime = 0f; float currentRIGHTWingKeyHoldTime = 0f;
+    float currentLeftWingKeyHoldTime = 0f; float currentRightWingKeyHoldTime = 0f;
     #endregion
 
     #region Setup
@@ -113,29 +113,29 @@ public class PlayerInput : MonoBehaviour
         }
         if (Input.GetKey(WingRightKey))
         {
-            currentRIGHTWingKeyHoldTime += Time.deltaTime;
+            currentRightWingKeyHoldTime += Time.deltaTime;
         }
 
         // When they release, check how long they were being held and determine wanted usage through that
         if (Input.GetKeyUp(WingLeftKey))
         {
             if (currentLeftWingKeyHoldTime >= wingDropThresholdTime)
-            { crowController.ReceiveUnequipWingInput(true); }
+            { Debug.Log("Left Wing DROP"); }
             else
-            { crowController.ReceiveEquipWingInput(true); }
+            { Debug.Log("Left Wing PICKUP"); }
 
             // Reset timer
             currentLeftWingKeyHoldTime = 0f;
         }
         if (Input.GetKeyUp(WingRightKey))
         {
-            if (currentRIGHTWingKeyHoldTime >= wingDropThresholdTime)
-            { crowController.ReceiveUnequipWingInput(false); }
+            if (currentLeftWingKeyHoldTime >= wingDropThresholdTime)
+            { }
             else
-            { crowController.ReceiveEquipWingInput(false); }
+            { }
 
             // Reset timer
-            currentRIGHTWingKeyHoldTime = 0f;
+            currentRightWingKeyHoldTime = 0f;
         }
 
         // Check nevertheless the if Player has reached the time limit
