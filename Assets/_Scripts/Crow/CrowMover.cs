@@ -22,8 +22,11 @@ public class CrowMover : MonoBehaviour
 
     [HideInInspector] public Vector3 lastMoveVector = Vector3.zero;
 
-    // Jumping
-    //bool
+    public enum State
+    {
+        idle, walk, jump, fly
+    }
+    public State state;
     #endregion
 
     #region Setup
@@ -38,6 +41,8 @@ public class CrowMover : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
     }
+
+
     #endregion
 
     #region Functions
@@ -57,6 +62,30 @@ public class CrowMover : MonoBehaviour
             lastMoveVector = moveVector;
 
             currentMoveType.ExecuteMove(this, moveVector);
+
+            graphics.UpdateAnimation(CrowGraphicsController.Mode.walk);
+
+            // if touching ground, animate walk
+            if (jumper.CheckJumpDistance())
+            {
+                graphics.UpdateAnimation(CrowGraphicsController.Mode.walk);
+            }
+            else
+            {
+                graphics.UpdateAnimation(CrowGraphicsController.Mode.jump);
+            }
+        }
+    }
+
+    public void Idle()
+    {
+        if (flyer.flying == false && jumper.CheckJumpDistance())
+        {
+            graphics.UpdateAnimation(CrowGraphicsController.Mode.idle);
+        }
+        else if (rb.velocity.y != 0 && flyer.flying == false)
+        {
+            graphics.UpdateAnimation(CrowGraphicsController.Mode.jump);
         }
     }
 
@@ -100,6 +129,7 @@ public class CrowMover : MonoBehaviour
 
         gravity.ChangeGravity(gravity.DEFAULT_gravity - flyer.currentGravityModifier);
 
+        graphics.UpdateAnimation(CrowGraphicsController.Mode.fly);
     }
 
     public void ExitFlight()
@@ -112,5 +142,6 @@ public class CrowMover : MonoBehaviour
         gravity.ChangeGravity(gravity.DEFAULT_gravity);
     }
     #endregion
+
 
 }
