@@ -52,8 +52,8 @@ MonoBehaviour:
   targetAnimationValue: 1
   animationChangeLerpSpeedHigher: 0.1
   animationChangeLerpSpeedLower: 0.02
-  leftWingPosition: {fileID: 0}
-  rightWingPosition: {fileID: 0}
+  leftWingPosition: {fileID: 5470927085636538906}
+  rightWingPosition: {fileID: 3433702331540257846}
 --- !u!1 &267098878658494543
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 267098879275410890}
   - component: {fileID: 267098879275410889}
   - component: {fileID: 8769157758900744514}
+  - component: {fileID: 7020048830042664502}
   m_Layer: 10
   m_Name: CROW
   m_TagString: Untagged
@@ -254,6 +255,19 @@ MonoBehaviour:
   stopFlyingForwardCheckLength: 0.1
   stopFlyingDownwardCheckLength: 0.1
   stopFlyingCheckRadius: 0.4
+--- !u!114 &7020048830042664502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267098879275410880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c8605e0ae8e0e44819bf36ec5c1926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wingCheckRadius: 2
 --- !u!1 &6080727832048347235
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,6 +1364,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1aebbac5aa15234395edb3d15b05291, type: 3}
+--- !u!4 &3433702331540257846 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3433702331071571596, guid: f1aebbac5aa15234395edb3d15b05291,
+    type: 3}
+  m_PrefabInstance: {fileID: 739285690}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &3616390061941392657 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3616390062680678315, guid: f1aebbac5aa15234395edb3d15b05291,
@@ -1359,6 +1379,12 @@ Animator:
 --- !u!4 &3865573803160804356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3865573802421520062, guid: f1aebbac5aa15234395edb3d15b05291,
+    type: 3}
+  m_PrefabInstance: {fileID: 739285690}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5470927085636538906 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5470927085033572512, guid: f1aebbac5aa15234395edb3d15b05291,
     type: 3}
   m_PrefabInstance: {fileID: 739285690}
   m_PrefabAsset: {fileID: 0}
