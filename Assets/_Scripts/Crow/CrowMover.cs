@@ -10,7 +10,8 @@ public class CrowMover : MonoBehaviour
     CrowController controller;
     [HideInInspector] public CrowFlyer flyer;
     CrowGravity gravity;
-    CrowGraphicsController graphics;
+    [HideInInspector]
+    public CrowGraphicsController graphics;
 
     public MoveType baseMoveType;
 

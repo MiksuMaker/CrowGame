@@ -25,6 +25,11 @@ public class CrowFlyer : MonoBehaviour
     [SerializeField] float BASE_flightFrowardSpeed = 1f;
 
     [HideInInspector] public bool flying = false;
+
+    [Header("Fly Stopping")]
+    [SerializeField] float stopFlyingForwardCheckLength = 0.1f;
+    [SerializeField] float stopFlyingDownwardCheckLength = 0.1f;
+    [SerializeField] float stopFlyingCheckRadius = 0.4f;
     #endregion
 
     #region Setup
@@ -45,8 +50,8 @@ public class CrowFlyer : MonoBehaviour
             // Continuous flight
             mover.MoveForwards(currentTurning);
 
-            // Check if touching the ground
-            if (jumper.CheckJumpDistance())
+            // Check if touching the ground OR the wall
+            if (CheckFlightStop() || CheckFlightStop(false))
             {
                 mover.ExitFlight();
             }
@@ -98,4 +103,27 @@ public class CrowFlyer : MonoBehaviour
     }
     #endregion
 
+    #region Fly Stopping
+    public bool CheckFlightStop(bool forward = true)
+    {
+        bool legalHit = false;
+
+        Vector3 checkPos = Vector3.zero;
+        if (forward)
+        {
+            // Do the forward check
+            checkPos = mover.graphics.transform.forward * stopFlyingForwardCheckLength;
+        }
+        else { checkPos = -transform.up * stopFlyingDownwardCheckLength; }
+
+        Collider[] colliders = Physics.OverlapSphere(transform.position + checkPos, stopFlyingCheckRadius);
+        if (colliders.Length >= 2)
+        {
+            // Hit
+            legalHit = true;
+        }
+
+        return legalHit;
+    }
+    #endregion
 }
