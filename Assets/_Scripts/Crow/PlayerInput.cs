@@ -13,18 +13,23 @@ public class PlayerInput : MonoBehaviour
     KeyCode BackwardKey = KeyCode.S;
     KeyCode RightwardKey = KeyCode.D;
 
-    Vector3 desiredNextMovement = Vector3.zero;
+    KeyCode WingLeftKey = KeyCode.Q;
+    KeyCode WingRightKey = KeyCode.E;
 
     KeyCode JumpKey = KeyCode.Space;
+
+    Vector3 desiredNextMovement = Vector3.zero;
+
     bool jumpInput = false;
 
     bool enterFlightInput = false;
     [SerializeField] float jumpActivationThresholdTime = 0.1f;
     bool jumpKeyIsBeingHeld = false;
     float currentJumpKeyHoldTime = 0f;
-
-    KeyCode WingLeftKey = KeyCode.Q;
-    KeyCode WingRightKey = KeyCode.E;
+    
+    [Header("Wings")]
+    [SerializeField] float wingDropThresholdTime = 0.2f;
+    float currentLeftWingKeyHoldTime = 0f; float currentRightWingKeyHoldTime = 0f;
     #endregion
 
     #region Setup
@@ -98,13 +103,35 @@ public class PlayerInput : MonoBehaviour
     private void HandleWingInput()
     {
         // Check if WingKeys were pressed
-        if (Input.GetKeyDown(WingLeftKey))
+        if (Input.GetKey(WingLeftKey))
         {
-
+            currentLeftWingKeyHoldTime += Time.deltaTime;
         }
-        if (Input.GetKeyDown(WingRightKey))
+        if (Input.GetKey(WingRightKey))
         {
+            currentRightWingKeyHoldTime += Time.deltaTime;
+        }
 
+        // When they release, check how long they were being held and determine wanted usage through that
+        if (Input.GetKeyUp(WingLeftKey))
+        {
+            if (currentLeftWingKeyHoldTime >= wingDropThresholdTime)
+            { }
+            else
+            { }
+
+            // Reset timer
+            currentLeftWingKeyHoldTime = 0f;
+        }
+        if (Input.GetKeyUp(WingRightKey))
+        {
+            if (currentLeftWingKeyHoldTime >= wingDropThresholdTime)
+            { }
+            else
+            { }
+
+            // Reset timer
+            currentRightWingKeyHoldTime = 0f;
         }
     }
 
