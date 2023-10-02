@@ -59,6 +59,10 @@ public class PlayerInput : MonoBehaviour
             crowController.ReceiveMovementInput(desiredNextMovement);
             desiredNextMovement = Vector3.zero;
         }
+        else
+        {
+            crowController.ReceiveIdleInput();
+        }
         // Jump
         if (jumpInput)
         {
