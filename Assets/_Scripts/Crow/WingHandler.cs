@@ -46,7 +46,6 @@ public class WingHandler : MonoBehaviour
         if (wings.Length > 1)
         {
             // Take the closest one
-            //wings.OrderByDescending(x => Vector3.Distance(x.transform.position, transform.position));
             wings = wings.OrderBy(x => Vector3.SqrMagnitude(x.transform.position - transform.position)).ToArray();
         }
 
