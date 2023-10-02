@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CrowMover : MonoBehaviour
@@ -22,6 +23,8 @@ public class CrowMover : MonoBehaviour
 
     [HideInInspector] public Vector3 lastMoveVector = Vector3.zero;
 
+    private Animator crowAnimator;
+
     // Jumping
     //bool
     #endregion
@@ -37,6 +40,8 @@ public class CrowMover : MonoBehaviour
         controller = GetComponent<CrowController>();
 
         rb = GetComponent<Rigidbody>();
+
+        crowAnimator = GetComponentInChildren<Animator>();
     }
     #endregion
 
@@ -53,11 +58,15 @@ public class CrowMover : MonoBehaviour
         {
             controller.RotateGraphicsTowardsMovement(moveVector);
 
+            //enter walking animation //
+            crowAnimator.SetFloat("Y", 1);
+
             // Store the LastMoveVector
             lastMoveVector = moveVector;
 
             currentMoveType.ExecuteMove(this, moveVector);
         }
+       
     }
 
     public void MoveForwards(float turningModifier)
@@ -82,6 +91,8 @@ public class CrowMover : MonoBehaviour
         if (jumper.CheckJumpDistance())
         {
             currentMoveType.ExecuteJump(this);
+            //enter jumping animation //
+            crowAnimator.SetFloat("Y", 2);
         }
     }
 
@@ -98,6 +109,9 @@ public class CrowMover : MonoBehaviour
 
         flyer.flying = true;
 
+        //enter flying animation // 
+        crowAnimator.SetFloat("Y", 3);
+
         gravity.ChangeGravity(gravity.DEFAULT_gravity - flyer.currentGravityModifier);
 
     }
@@ -108,6 +122,9 @@ public class CrowMover : MonoBehaviour
         currentMoveType = baseMoveType;
 
         flyer.flying = false;
+
+        //exit flying animation
+        crowAnimator.SetFloat("Y", 0);
 
         gravity.ChangeGravity(gravity.DEFAULT_gravity);
     }
