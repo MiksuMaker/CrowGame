@@ -46,7 +46,8 @@ public class WingHandler : MonoBehaviour
         if (wings.Length > 1)
         {
             // Take the closest one
-            wings.OrderBy(x => Vector3.Distance(x.transform.position, transform.position));
+            //wings.OrderByDescending(x => Vector3.Distance(x.transform.position, transform.position));
+            wings = wings.OrderBy(x => Vector3.SqrMagnitude(x.transform.position - transform.position)).ToArray();
         }
 
         Debug.Log("Amount of wings: " + wings.Length);
@@ -61,6 +62,32 @@ public class WingHandler : MonoBehaviour
         if (CheckForWings())
         {
             EquipWing(CheckForClosestWing(), leftWing);
+        }
+    }
+
+    public void TryUnequipWing(bool leftWingSide)
+    {
+        //Debug.Log("Handler");
+        if (leftWingSide)
+        {
+            // Check if there is left wing currently
+            if (leftWingGO != null)
+            {
+                flyer.leftWing = null;
+                leftWingGO.GetComponent<Wing>().UnEquip();
+                leftWingGO.transform.parent = null;
+            }
+        }
+        else
+        {
+            //Debug.Log("Right");
+            // Check if there is RIGHT wing currently
+            if (rightWingGO != null)
+            {
+                flyer.rightWing = null;
+                rightWingGO.GetComponent<Wing>().UnEquip();
+                rightWingGO.transform.parent = null;
+            }
         }
     }
     #endregion
@@ -87,6 +114,7 @@ public class WingHandler : MonoBehaviour
             wGO.transform.rotation = graphics.leftWingPosition.rotation;
             wGO.transform.parent = graphics.leftWingPosition;
 
+            leftWingGO = wGO;
         }
         else
         {
@@ -104,16 +132,17 @@ public class WingHandler : MonoBehaviour
             wGO.transform.position = graphics.rightWingPosition.position;
             wGO.transform.rotation = graphics.rightWingPosition.rotation;
             wGO.transform.parent = graphics.rightWingPosition;
+
+            rightWingGO = wGO;
         }
 
         // Turn off colliders etc. in wing GO
         wing.Equip();
+
+        // Update flyer
+        flyer.UpdateFlightStats();
     }
 
-    public void TryUnEquipWing(bool leftWingSide)
-    {
-
-    }
     #endregion
 
     private void OnDrawGizmos()

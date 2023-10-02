@@ -60,7 +60,7 @@ public class CrowController : MonoBehaviour
 
     public void ReceiveUnequipWingInput(bool leftWingSide)
     {
-        wingHandler.TryUnEquipWing(leftWingSide);
+        wingHandler.TryUnequipWing(leftWingSide);
     }
     #endregion
 
