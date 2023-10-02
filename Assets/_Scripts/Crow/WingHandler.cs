@@ -58,7 +58,6 @@ public class WingHandler : MonoBehaviour
     #region Equip Unequip Wings
     public void TryEquip(bool leftWing)
     {
-        Debug.Log("Handler");
         if (CheckForWings())
         {
             EquipWing(CheckForClosestWing(), leftWing);
