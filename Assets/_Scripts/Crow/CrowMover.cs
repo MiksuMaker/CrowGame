@@ -83,7 +83,7 @@ public class CrowMover : MonoBehaviour
         {
             graphics.UpdateAnimation(CrowGraphicsController.Mode.idle);
         }
-        else if (rb.velocity.y != 0)
+        else if (rb.velocity.y != 0 && flyer.flying == false)
         {
             graphics.UpdateAnimation(CrowGraphicsController.Mode.jump);
         }
