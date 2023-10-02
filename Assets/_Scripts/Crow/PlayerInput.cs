@@ -13,8 +13,8 @@ public class PlayerInput : MonoBehaviour
     KeyCode BackwardKey = KeyCode.S;
     KeyCode RightwardKey = KeyCode.D;
 
-    KeyCode WingLeftKey = KeyCode.Q;
-    KeyCode WingRightKey = KeyCode.E;
+    KeyCode WingLeftKey = KeyCode.E;
+    KeyCode WingRightKey = KeyCode.Q;
 
     KeyCode JumpKey = KeyCode.Space;
 
@@ -26,10 +26,10 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] float jumpActivationThresholdTime = 0.1f;
     bool jumpKeyIsBeingHeld = false;
     float currentJumpKeyHoldTime = 0f;
-    
+
     [Header("Wings")]
     [SerializeField] float wingDropThresholdTime = 0.2f;
-    float currentLeftWingKeyHoldTime = 0f; float currentRightWingKeyHoldTime = 0f;
+    float currentLeftWingKeyHoldTime = 0f; float currentRIGHTWingKeyHoldTime = 0f;
     #endregion
 
     #region Setup
@@ -113,29 +113,29 @@ public class PlayerInput : MonoBehaviour
         }
         if (Input.GetKey(WingRightKey))
         {
-            currentRightWingKeyHoldTime += Time.deltaTime;
+            currentRIGHTWingKeyHoldTime += Time.deltaTime;
         }
 
         // When they release, check how long they were being held and determine wanted usage through that
         if (Input.GetKeyUp(WingLeftKey))
         {
             if (currentLeftWingKeyHoldTime >= wingDropThresholdTime)
-            { Debug.Log("Left Wing DROP"); }
+            { crowController.ReceiveUnequipWingInput(true); }
             else
-            { Debug.Log("Left Wing PICKUP"); }
+            { crowController.ReceiveEquipWingInput(true); }
 
             // Reset timer
             currentLeftWingKeyHoldTime = 0f;
         }
         if (Input.GetKeyUp(WingRightKey))
         {
-            if (currentLeftWingKeyHoldTime >= wingDropThresholdTime)
-            { }
+            if (currentRIGHTWingKeyHoldTime >= wingDropThresholdTime)
+            { crowController.ReceiveUnequipWingInput(false); }
             else
-            { }
+            { crowController.ReceiveEquipWingInput(false); }
 
             // Reset timer
-            currentRightWingKeyHoldTime = 0f;
+            currentRIGHTWingKeyHoldTime = 0f;
         }
 
         // Check nevertheless the if Player has reached the time limit
