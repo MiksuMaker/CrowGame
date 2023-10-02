@@ -25,6 +25,8 @@ public class PlayerInput : MonoBehaviour
 
     KeyCode WingLeftKey = KeyCode.Q;
     KeyCode WingRightKey = KeyCode.E;
+
+    private Animator crowAnimator;
     #endregion
 
     #region Setup
@@ -33,6 +35,8 @@ public class PlayerInput : MonoBehaviour
         // Find crowController
         //crowController = FindObjectOfType<CrowController>();
         crowController = GetComponent<CrowController>();
+        //get animator child
+        crowAnimator = GetComponentInChildren<Animator>();
     }
     #endregion
     private void Update()
@@ -53,12 +57,18 @@ public class PlayerInput : MonoBehaviour
         {
             crowController.ReceiveMovementInput(desiredNextMovement);
             desiredNextMovement = Vector3.zero;
+
+            //enter walking animation //
+            crowAnimator.SetFloat("Y", 1);
         }
         // Jump
         if (jumpInput)
         {
             crowController.ReceiveJumpInput();
             jumpInput = false;
+
+            //enter jumping animation //
+            crowAnimator.SetFloat("Y", 2);
         }
     }
 
@@ -89,7 +99,9 @@ public class PlayerInput : MonoBehaviour
         #endregion
 
         // If input is not zero, send it to the Controller
-        if (moveVector == Vector3.zero) return;
+        if (moveVector == Vector3.zero)  return;
+
+
 
         desiredNextMovement = moveVector.normalized;
     }
@@ -146,6 +158,9 @@ public class PlayerInput : MonoBehaviour
         {
             // End the timer
             jumpKeyIsBeingHeld = false;
+
+            //exit flying animation
+            crowAnimator.SetFloat("Y", 0);
         }
     }
 
