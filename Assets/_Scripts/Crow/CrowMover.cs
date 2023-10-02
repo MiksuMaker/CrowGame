@@ -116,7 +116,7 @@ public class CrowMover : MonoBehaviour
 
     public void EnterFlight()
     {
-        Debug.Log("Enter flight");
+        //Debug.Log("Enter flight");
 
         lastMoveVector = graphics.transform.forward; // Force it to fly straight forwards
         currentMoveType = flyer.flyMoveType;
@@ -134,7 +134,7 @@ public class CrowMover : MonoBehaviour
 
     public void ExitFlight()
     {
-        Debug.Log("Exiting Flight");
+        //Debug.Log("Exiting Flight");
         currentMoveType = baseMoveType;
 
         flyer.flying = false;
