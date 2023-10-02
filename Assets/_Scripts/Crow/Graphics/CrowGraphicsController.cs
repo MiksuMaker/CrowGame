@@ -42,6 +42,21 @@ public class CrowGraphicsController : MonoBehaviour
         //transform.Rotate(towardsDir);
         transform.LookAt(transform.position + towardsDir, Vector3.up);
     }
+
+    public void RotateGraphicsAtPos(Vector3 worldPos)
+    {
+        float r = deviation;
+        Vector3 rand = new Vector3(Random.Range(-r, r), 0f, Random.Range(-r, r));
+
+        // Rotate
+        //transform.Rotate(towardsDir);
+        transform.LookAt(worldPos, Vector3.up);
+    }
+
+    public void RotateGraphicsByDegrees(float rotationAmount)
+    {
+        transform.Rotate(Vector3.up, rotationAmount);
+    }
     #endregion
 
     #region Animations

@@ -13,14 +13,25 @@ public class MoveTypeFlight : MoveType
         //                        += moveVector * mover.currentMoveStats.walkSpeed * Time.deltaTime);
 
 
-        //float rotation = moveVector.y;
-        //moveVector = new Vector3(moveVector.x, 0f, moveVector.z);
-        //Vector3 rotatedMoveVector = Quaternion.AngleAxis(moveVector.y, Vector3.up) * moveVector;
+        float rotation = -moveVector.y * 0.1f;
+        moveVector = new Vector3(moveVector.x, 0f, moveVector.z);
+
+        //Vector3 turnChange = mover.graphics.transform.right * rotation * 0.001f;
+
+        // Rotate graphics
+        mover.graphics.RotateGraphicsByDegrees(rotation);
+
+        // Calculate next pos
+        Vector3 moveToPos = mover.transform.position
+                                //+= (turnChange) +
+                                += 
+                                //mover.lastMoveVector * mover.flyer.currentFlightForwardSpeed * Time.deltaTime;
+                                mover.graphics.transform.forward * mover.flyer.currentFlightForwardSpeed * Time.deltaTime;
+
+        Debug.DrawRay(moveToPos, Vector3.up, Color.red, 1f);
 
         // Fly Forwards
-        mover.rb.MovePosition(mover.transform.position
-                                //+= rotatedMoveVector * mover.flyer.currentFlightForwardSpeed * Time.deltaTime);
-                                += mover.lastMoveVector * mover.flyer.currentFlightForwardSpeed * Time.deltaTime);
+        mover.rb.MovePosition(moveToPos);
 
     }
 

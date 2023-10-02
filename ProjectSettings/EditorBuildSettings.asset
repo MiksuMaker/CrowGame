@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/_Scenes/Teemu/LevelBlockout.unity
     guid: cbb21a857185d114092861eab463b53d
   - enabled: 1
+    path: Assets/_Scenes/Ali/AliLevelBlockout.unity
+    guid: a4433babf62de6d4b873d1634a651fb7
+  - enabled: 1
     path: Assets/_Scenes/Miksu/Prototype.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/_Scenes/Teemu/OpeningCutscene.unity
+    guid: 49b7dce11e6daf4468c8e6cd39086a11
   m_configObjects: {}

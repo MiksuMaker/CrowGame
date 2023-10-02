@@ -9,7 +9,7 @@ public class MenuButtons : MonoBehaviour
 
    public void PlayGame()
     {
-        SceneManager.LoadScene("LevelBlockout");
+        SceneManager.LoadScene("OpeningCutscene");
     }
 
     public void SettingButton()
