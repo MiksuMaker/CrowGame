@@ -341,7 +341,7 @@ MonoBehaviour:
   graphics: {fileID: 0}
   baseMoveType: {fileID: 11400000, guid: edd1b60267b62c045b15a64c4bb9a8a9, type: 2}
   currentMoveType: {fileID: 11400000, guid: edd1b60267b62c045b15a64c4bb9a8a9, type: 2}
-  currentMoveStats: {fileID: 11400000, guid: 13017aa26559bc24b99a2156f8203da9, type: 2}
+  currentMoveStats: {fileID: 11400000, guid: 5fe7ffab5bc68d54faf340aecc923ce9, type: 2}
   rb: {fileID: 0}
   lastMoveVector: {x: 0, y: 0, z: 0}
   state: 0
@@ -388,7 +388,7 @@ MonoBehaviour:
   flyMoveType: {fileID: 11400000, guid: 525285bfeb9d6414f9fc58d4fb8d5d4f, type: 2}
   leftWing: {fileID: 0}
   rightWing: {fileID: 0}
-  currentFlightForwardSpeed: 7
+  currentFlightForwardSpeed: 5
   currentTurning: 20
   currentJumpBoost: 2
   currentGravityModifier: 2
