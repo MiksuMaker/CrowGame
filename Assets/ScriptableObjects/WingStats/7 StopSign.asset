@@ -18,5 +18,5 @@ MonoBehaviour:
   gravityModifier_wo_Pair: 1
   turnStrength: 20
   turnStrength_wo_Pair: 3
-  jumpBoost: 1
+  jumpBoost: 0
   jumpBoost_wo_Pair: 0
