@@ -796,7 +796,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6080727832730412282}
-  m_LocalRotation: {x: 0.23499389, y: 0.02544345, z: -0.006153544, w: 0.97164434}
+  m_LocalRotation: {x: 0.2349939, y: 0.025443414, z: -0.006153535, w: 0.9716443}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1316,6 +1316,7 @@ GameObject:
   - component: {fileID: 8769157758859951840}
   - component: {fileID: 8769157758859951843}
   - component: {fileID: 8769157758859951845}
+  - component: {fileID: 8197891132116347399}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1456,6 +1457,19 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8197891132116347399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8769157758859951855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfda9d95021c76547b453053b95a5176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crowCam1: {fileID: 0}
 --- !u!1 &8769157759067843811
 GameObject:
   m_ObjectHideFlags: 0
