@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Miksu/PhysicsTesting.unity
     guid: 69a4cdfcc60a3b542a3548ef1fba2f53
+  - enabled: 1
+    path: Assets/_Scenes/Nicole/TheRealOne.unity
+    guid: 39f262f230ec8e049bc680e0a6fa277f
   m_configObjects: {}
