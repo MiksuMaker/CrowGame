@@ -75,6 +75,8 @@ public class WingHandler : MonoBehaviour
                 flyer.leftWing = null;
                 leftWingGO.GetComponent<Wing>().UnEquip();
                 leftWingGO.transform.parent = null;
+
+                flyer.UpdateFlightStats();
             }
         }
         else
@@ -86,6 +88,8 @@ public class WingHandler : MonoBehaviour
                 flyer.rightWing = null;
                 rightWingGO.GetComponent<Wing>().UnEquip();
                 rightWingGO.transform.parent = null;
+
+                flyer.UpdateFlightStats();
             }
         }
     }

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: 1 FlipFlop
   m_EditorClassIdentifier: 
   flightSpeedMultiplier: 1
-  flightSpeedMultiplier_wo_Pair: 1
-  gravityModifier: 5
+  flightSpeedMultiplier_wo_Pair: 0.8
+  gravityModifier: 4
   gravityModifier_wo_Pair: 1
   turnStrength: 20
-  turnStrength_wo_Pair: 3
+  turnStrength_wo_Pair: 15
   jumpBoost: 1
   jumpBoost_wo_Pair: 0

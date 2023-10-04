@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5892c2a9941170d499b5f4af79daa7f7, type: 3}
   m_Name: 2 Blahaj
   m_EditorClassIdentifier: 
-  flightSpeedMultiplier: 1
-  flightSpeedMultiplier_wo_Pair: 1
-  gravityModifier: 5
+  flightSpeedMultiplier: 0.95
+  flightSpeedMultiplier_wo_Pair: 0.8
+  gravityModifier: 4
   gravityModifier_wo_Pair: 1
-  turnStrength: 20
-  turnStrength_wo_Pair: 3
+  turnStrength: 10
+  turnStrength_wo_Pair: 15
   jumpBoost: 1
   jumpBoost_wo_Pair: 0
