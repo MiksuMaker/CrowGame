@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 5780530989348129871}
   - component: {fileID: 3043925134764513476}
   - component: {fileID: 3666007588739270576}
+  - component: {fileID: 3108744868543724226}
   m_Layer: 10
   m_Name: CharacterController
   m_TagString: Untagged
@@ -391,7 +392,7 @@ MonoBehaviour:
   currentFlightForwardSpeed: 5
   currentTurning: 20
   currentJumpBoost: 2
-  currentGravityModifier: 2
+  currentGravityModifier: 1
   BASE_flightFrowardSpeed: 5
   flying: 0
   stopFlyingForwardCheckLength: 0.1
@@ -410,6 +411,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wingCheckRadius: 2
+--- !u!114 &3108744868543724226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5780530989348129862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dceb564ec57ba146b9001928ae94055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpLeft: {fileID: 0}
+  pickUpRight: {fileID: 0}
 --- !u!1 &5827471833949063877
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +813,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6168532492534785013}
-  m_LocalRotation: {x: 0.19907084, y: 0.02465524, z: -0.005010033, w: 0.9796621}
+  m_LocalRotation: {x: 0.19907086, y: 0.02465527, z: -0.005010039, w: 0.9796621}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
