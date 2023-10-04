@@ -5,10 +5,10 @@ using UnityEngine;
 public class FriendCrowFly : MonoBehaviour
 {
 
-    private Transform[] crowWaypoints;
+   [SerializeField] private Transform[] crowWaypoints;
 
-    private float crowSpeed;
-    private float crowRotationSpeed;
+   [SerializeField] private float crowSpeed;
+    [SerializeField]private float crowRotationSpeed;
 
     private int crowState;
 
