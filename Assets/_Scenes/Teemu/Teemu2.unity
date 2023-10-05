@@ -4707,22 +4707,22 @@ PrefabInstance:
     - target: {fileID: 6168532492090062431, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_FollowOffset.y
-      value: 2.887219
+      value: 0.955797
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492090062431, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_FollowOffset.z
-      value: -2.828478
+      value: -2.126268
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492124835660, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_FollowOffset.y
-      value: 2.887219
+      value: 0.955797
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492124835660, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_FollowOffset.z
-      value: -2.828478
+      value: -2.126268
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492520702929, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
@@ -4762,12 +4762,12 @@ PrefabInstance:
     - target: {fileID: 6168532492520702930, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.024739418
+      value: 0.024739414
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492520702930, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.004576245
+      value: -0.0045762444
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492534785014, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
@@ -4778,6 +4778,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Lens.m_SensorSize.y
       value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168532492534785015, guid: 3faee85101a508b458a80f6b352d6ca9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492534785015, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
@@ -4812,12 +4817,12 @@ PrefabInstance:
     - target: {fileID: 6168532493239073426, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_FollowOffset.y
-      value: 2.887219
+      value: 0.955797
       objectReference: {fileID: 0}
     - target: {fileID: 6168532493239073426, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_FollowOffset.z
-      value: -2.828478
+      value: -2.126268
       objectReference: {fileID: 0}
     - target: {fileID: 6168532493686530459, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
@@ -4828,6 +4833,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Lens.m_SensorSize.y
       value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168532493686530460, guid: 3faee85101a508b458a80f6b352d6ca9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6168532493686530460, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
@@ -4842,12 +4852,12 @@ PrefabInstance:
     - target: {fileID: 6168532493686530460, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.02443432
+      value: 0.024434283
       objectReference: {fileID: 0}
     - target: {fileID: 6168532493686530460, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0059955446
+      value: -0.0059955358
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3faee85101a508b458a80f6b352d6ca9, type: 3}
@@ -28603,6 +28613,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1457389155}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1979666210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1979666211}
+  m_Layer: 0
+  m_Name: CrowFriendWaypoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1979666211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979666210}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.414997, y: -11.728415, z: 68.58474}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1995283348
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,7 +9,10 @@ public class LevelEnd : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(EndSlides());
+        if (other.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(EndSlides());
+        }
     }
 
     private IEnumerator EndSlides()
