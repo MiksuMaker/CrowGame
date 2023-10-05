@@ -6,12 +6,19 @@ public class ItemUI : MonoBehaviour
 {
     [SerializeField] private GameObject pickUpLeft;
     [SerializeField] private GameObject pickUpRight;    
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("wing"))
         {
             pickUpLeft.SetActive(true);
             pickUpRight.SetActive(true);
+
+
+        }
+        else
+        {
+            pickUpLeft.SetActive(false);
+            pickUpRight.SetActive(false);
         }
 
     }
@@ -24,4 +31,6 @@ public class ItemUI : MonoBehaviour
             pickUpRight.SetActive(false);
         }
     }
+
+   
 }

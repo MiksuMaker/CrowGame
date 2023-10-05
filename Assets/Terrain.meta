@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Terrain.meta
 guid: 42660a16c1e8d6b44b25a7d6f18a17a0
+========
+guid: 4133ac64aea0ae34ca2b94968befd084
+>>>>>>>> Teemu:Assets/_Prefabs/Items.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

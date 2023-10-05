@@ -16,7 +16,7 @@ MonoBehaviour:
   flightSpeedMultiplier_wo_Pair: 0.8
   gravityModifier: 4
   gravityModifier_wo_Pair: 1
-  turnStrength: 20
+  turnStrength: 21
   turnStrength_wo_Pair: 15
   jumpBoost: 1
   jumpBoost_wo_Pair: 0
