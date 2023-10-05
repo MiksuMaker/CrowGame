@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5892c2a9941170d499b5f4af79daa7f7, type: 3}
   m_Name: 3 BubbleWrap
   m_EditorClassIdentifier: 
-  flightSpeedMultiplier: 1
+  flightSpeedMultiplier: 0.9
   flightSpeedMultiplier_wo_Pair: 1
-  gravityModifier: 5
+  gravityModifier: 4.3
   gravityModifier_wo_Pair: 1
-  turnStrength: 20
+  turnStrength: 15
   turnStrength_wo_Pair: 3
-  jumpBoost: 1
-  jumpBoost_wo_Pair: 0
+  jumpBoost: 0.75
+  jumpBoost_wo_Pair: 1

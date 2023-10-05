@@ -9,14 +9,11 @@ public class MoveTypeFlight : MoveType
     public override void ExecuteMove(CrowMover mover, Vector3 moveVector)
     {
         //// Move the Crow
-        //mover.rb.MovePosition(mover.transform.position
-        //                        += moveVector * mover.currentMoveStats.walkSpeed * Time.deltaTime);
 
-
-        float rotation = -moveVector.y * 0.1f;
+        //float rotation = -moveVector.y * 0.1f;
+        float rotation = moveVector.y * 0.1f;
         moveVector = new Vector3(moveVector.x, 0f, moveVector.z);
 
-        //Vector3 turnChange = mover.graphics.transform.right * rotation * 0.001f;
 
         // Rotate graphics
         mover.graphics.RotateGraphicsByDegrees(rotation);

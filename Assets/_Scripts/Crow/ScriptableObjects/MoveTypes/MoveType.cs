@@ -17,7 +17,8 @@ public class MoveType : ScriptableObject
     public virtual void ExecuteJump(CrowMover mover)
     {
         // Jump the Crow
-        mover.rb.AddForce(Vector3.up * mover.currentMoveStats.jumpPower,
+        //mover.rb.AddForce(Vector3.up * mover.currentMoveStats.jumpPower,
+        mover.rb.AddForce(Vector3.up * (mover.currentMoveStats.jumpPower + mover.flyer.currentJumpBoost),
                                                 ForceMode.VelocityChange);
     }
 }

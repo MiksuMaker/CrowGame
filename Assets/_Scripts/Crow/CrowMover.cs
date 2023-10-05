@@ -22,6 +22,7 @@ public class CrowMover : MonoBehaviour
 
     [HideInInspector] public Vector3 lastMoveVector = Vector3.zero;
 
+
     public enum State
     {
         idle, walk, jump, fly
@@ -78,7 +79,7 @@ public class CrowMover : MonoBehaviour
     }
 
     public void Idle()
-    {
+    {  
         if (flyer.flying == false && jumper.CheckJumpDistance())
         {
             graphics.UpdateAnimation(CrowGraphicsController.Mode.idle);
