@@ -3816,6 +3816,7 @@ MonoBehaviour:
   cinematicCam: {fileID: 1521058943}
   waitCinematicChange: 1
   cameraChangeLenght: 3
+  friendCrow: {fileID: 619918453}
 --- !u!65 &162729736
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4707,22 +4708,22 @@ PrefabInstance:
     - target: {fileID: 6168532492090062431, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_FollowOffset.y
-      value: 3
+      value: 0.6141397
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492090062431, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_FollowOffset.z
-      value: -3
+      value: -2.019016
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492124835660, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_FollowOffset.y
-      value: 3
+      value: 0.6141397
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492124835660, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_FollowOffset.z
-      value: -3
+      value: -2.019016
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492520702929, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
@@ -4757,17 +4758,17 @@ PrefabInstance:
     - target: {fileID: 6168532492520702930, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.1818346
+      value: 0.18183462
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492520702930, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.024739452
+      value: 0.024739448
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492520702930, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.004576251
+      value: -0.0045762504
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492534785014, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
@@ -4792,17 +4793,17 @@ PrefabInstance:
     - target: {fileID: 6168532492534785015, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.19907086
+      value: 0.19907084
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492534785015, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.02465527
+      value: 0.02465524
       objectReference: {fileID: 0}
     - target: {fileID: 6168532492534785015, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.005010039
+      value: -0.005010033
       objectReference: {fileID: 0}
     - target: {fileID: 6168532493080193429, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
@@ -4817,12 +4818,12 @@ PrefabInstance:
     - target: {fileID: 6168532493239073426, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_FollowOffset.y
-      value: 3
+      value: 0.6141397
       objectReference: {fileID: 0}
     - target: {fileID: 6168532493239073426, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
       propertyPath: m_FollowOffset.z
-      value: -3
+      value: -2.019016
       objectReference: {fileID: 0}
     - target: {fileID: 6168532493686530459, guid: 3faee85101a508b458a80f6b352d6ca9,
         type: 3}
@@ -24320,14 +24321,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440911963}
-  m_LocalRotation: {x: -0.1754007, y: -0.9841155, z: -0.026985964, w: 0.0048098885}
+  m_LocalRotation: {x: -0.046795245, y: -0.10734956, z: 0.17118411, w: 0.97825474}
   m_LocalPosition: {x: -1.89, y: 20.71, z: 32.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 24
-  m_LocalEulerAnglesHint: {x: -176.859, y: 0, z: -159.788}
+  m_LocalEulerAnglesHint: {x: -176.858, y: 166.915, z: -159.788}
 --- !u!135 &1440911965
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -30012,6 +30013,7 @@ MonoBehaviour:
   cinematicCam: {fileID: 1319970009}
   waitCinematicChange: 1
   cameraChangeLenght: 3
+  friendCrow: {fileID: 0}
 --- !u!65 &2037175736
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31509,8 +31511,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 799966012}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &2122077448
-MeshCollider:
+--- !u!4 &2122077449 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 57357aab644e2ac4ea01eb66b4b2c19f,
+    type: 3}
+  m_PrefabInstance: {fileID: 799966012}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &2122077450
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122077444}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &2122077453
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -31519,16 +31543,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2032164666427403487, guid: 57357aab644e2ac4ea01eb66b4b2c19f, type: 3}
---- !u!4 &2122077449 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 57357aab644e2ac4ea01eb66b4b2c19f,
-    type: 3}
-  m_PrefabInstance: {fileID: 799966012}
-  m_PrefabAsset: {fileID: 0}
+  m_Radius: 0.0017835618
+  m_Height: 0.0070754527
+  m_Direction: 1
+  m_Center: {x: -0.00013746097, y: 0.0035367487, z: -0.0002638417}
 --- !u!1001 &2136329845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31889,7 +31907,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8769157758189331719}
-  m_LocalRotation: {x: 0.19907089, y: 0.024655273, z: -0.005010041, w: 0.9796621}
+  m_LocalRotation: {x: 0.19907087, y: 0.024655215, z: -0.005010029, w: 0.9796621}
   m_LocalPosition: {x: 3.4327204, y: 2.5, z: -8.8896265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

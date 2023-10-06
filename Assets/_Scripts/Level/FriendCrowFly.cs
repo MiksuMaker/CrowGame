@@ -9,7 +9,7 @@ public class FriendCrowFly : MonoBehaviour
 
    [SerializeField] private float crowSpeed;
    [SerializeField]private float crowRotationSpeed;
-    [SerializeField] private bool crowFly;
+    public bool crowFly;
 
     private int crowState;
 
