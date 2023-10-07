@@ -11,6 +11,8 @@ public class FriendCrowFly : MonoBehaviour
    [SerializeField]private float crowRotationSpeed;
     public bool crowFly;
 
+    [SerializeField] private Animator crowAnimator;
+
     private int crowState;
 
     // Start is called before the first frame update
@@ -25,10 +27,12 @@ public class FriendCrowFly : MonoBehaviour
         if (crowState == crowWaypoints.Length)
         {
             crowFly = false;
+            crowAnimator.SetFloat("Y", 0);
         }
 
         if (crowFly)
         {
+            crowAnimator.SetFloat("Y", 2);
             //Move towards waypoint
             var step = crowSpeed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, crowWaypoints[crowState].position, step);
