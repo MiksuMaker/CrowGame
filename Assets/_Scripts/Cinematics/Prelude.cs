@@ -32,7 +32,7 @@ public class Prelude : MonoBehaviour
         yield return new WaitForSeconds(5f);
         preludeState++;
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene("AliLevelBlockout");
+        SceneManager.LoadScene("Teemu2");
 
     }
 }
