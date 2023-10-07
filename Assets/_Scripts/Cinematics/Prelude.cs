@@ -17,6 +17,7 @@ public class Prelude : MonoBehaviour
 
     public void Start()
     {
+        Time.timeScale = 1;
         StartCoroutine(PreludeSlides());
     }
 

@@ -29,6 +29,7 @@ public class MenuButtons : MonoBehaviour
 
     public void MainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("TitleScreen");
     }
 
