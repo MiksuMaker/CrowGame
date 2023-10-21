@@ -6,6 +6,7 @@ using Cinemachine;
 public class BeginningCinematicCamera : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera crowCam1;
+    [SerializeField] private GameObject friendCrow;
 
     public void Start()
     {
@@ -16,9 +17,8 @@ public class BeginningCinematicCamera : MonoBehaviour
     private IEnumerator CinematicCameraEvent()
     {
         yield return new WaitForSeconds(1f);
-        crowCam1.m_Priority = 11;
-        yield return new WaitForSeconds(3f);
-        crowCam1.m_Priority = 1;
+        friendCrow.GetComponent<FriendCrowFly>().crowFly = true;
+        
     }
 
 }

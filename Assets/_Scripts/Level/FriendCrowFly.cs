@@ -15,11 +15,6 @@ public class FriendCrowFly : MonoBehaviour
 
     private int crowState;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -49,6 +44,14 @@ public class FriendCrowFly : MonoBehaviour
     {
         if (other.gameObject.CompareTag("flyWaypoint") && crowState < crowWaypoints.Length)
         {
+            crowState++;
+            Destroy(other.gameObject);
+        }
+
+        if(other.gameObject.CompareTag("flyStopPoint") && crowState < crowWaypoints.Length)
+        {
+            crowFly = false;
+            crowAnimator.SetFloat("Y", 0);
             crowState++;
             Destroy(other.gameObject);
         }
