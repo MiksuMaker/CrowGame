@@ -17,7 +17,7 @@ public class FriendCrowFly : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (crowState == crowWaypoints.Length)
         {

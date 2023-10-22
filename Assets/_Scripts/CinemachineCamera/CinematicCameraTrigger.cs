@@ -7,7 +7,8 @@ public class CinematicCameraTrigger : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera cinematicCam;
 
-    [SerializeField] private float waitCinematicChange;
+    [SerializeField] private float waitStartCinematicChange;
+    [SerializeField] private float waitEndCinematicChange;
     [SerializeField] private float cameraChangeLenght;
     [SerializeField] private GameObject friendCrow;
 
@@ -22,12 +23,11 @@ public class CinematicCameraTrigger : MonoBehaviour
 
     private IEnumerator CinematicCameraEvent()
     {
-        yield return new WaitForSeconds(waitCinematicChange);
-        cinematicCam.m_Priority = 11;
-        yield return new WaitForSeconds(cameraChangeLenght);
-        cinematicCam.m_Priority = 1;
-        yield return new WaitForSeconds(2);
         friendCrow.GetComponent<FriendCrowFly>().crowFly = true;
+        yield return new WaitForSeconds(waitStartCinematicChange);
+        cinematicCam.m_Priority = 11;
+        yield return new WaitForSeconds(waitEndCinematicChange);
+        cinematicCam.m_Priority = 1;
         Destroy (this.gameObject);  
     }
 }
