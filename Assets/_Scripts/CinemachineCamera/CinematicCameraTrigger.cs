@@ -12,6 +12,13 @@ public class CinematicCameraTrigger : MonoBehaviour
     [SerializeField] private float cameraChangeLenght;
     [SerializeField] private GameObject friendCrow;
 
+    LevelEnd levelEnd;
+
+    private void Start()
+    {
+        levelEnd = FindObjectOfType<LevelEnd>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -28,6 +35,7 @@ public class CinematicCameraTrigger : MonoBehaviour
         cinematicCam.m_Priority = 11;
         yield return new WaitForSeconds(waitEndCinematicChange);
         cinematicCam.m_Priority = 1;
+        levelEnd.levelState++;
         Destroy (this.gameObject);  
     }
 }

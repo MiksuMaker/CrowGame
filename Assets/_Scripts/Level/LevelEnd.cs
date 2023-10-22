@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class LevelEnd : MonoBehaviour
 {
     [SerializeField] private GameObject endSlides;
+    public int levelState = 0;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && levelState >= 2)
         {
             StartCoroutine(EndSlides());
         }
