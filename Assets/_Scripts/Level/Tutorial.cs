@@ -14,7 +14,7 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator StartTutorialCounter()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(8f);
         tutorial.SetActive(true);
         
     }

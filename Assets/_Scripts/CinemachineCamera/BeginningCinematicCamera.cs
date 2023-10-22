@@ -17,12 +17,13 @@ public class BeginningCinematicCamera : MonoBehaviour
     private IEnumerator CinematicCameraEvent()
     {
         crowCam1.m_Priority = 11;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
         friendCrow.GetComponent<FriendCrowFly>().crowFly = true;
         yield return new WaitForSeconds(0.5f);
         crowCam1.m_Follow = friendCrow.transform;
         yield return new WaitForSeconds(2f);
         crowCam1.m_Priority = 0;
+        
 
     }
 
