@@ -9,7 +9,6 @@ public class CinematicCameraTrigger : MonoBehaviour
 
     [SerializeField] private float waitStartCinematicChange;
     [SerializeField] private float waitEndCinematicChange;
-    [SerializeField] private float cameraChangeLenght;
     [SerializeField] private GameObject friendCrow;
 
     LevelEnd levelEnd;
