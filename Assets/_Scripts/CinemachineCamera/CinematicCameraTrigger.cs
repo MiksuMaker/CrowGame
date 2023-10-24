@@ -10,6 +10,7 @@ public class CinematicCameraTrigger : MonoBehaviour
     [SerializeField] private float waitStartCinematicChange;
     [SerializeField] private float waitEndCinematicChange;
     [SerializeField] private GameObject friendCrow;
+    [SerializeField] private CinemachineBrain brain;
 
     LevelEnd levelEnd;
 
@@ -29,6 +30,7 @@ public class CinematicCameraTrigger : MonoBehaviour
 
     private IEnumerator CinematicCameraEvent()
     {
+        brain.m_DefaultBlend.m_Time = 3;
         friendCrow.GetComponent<FriendCrowFly>().crowFly = true;
         yield return new WaitForSeconds(waitStartCinematicChange);
         cinematicCam.m_Priority = 11;
