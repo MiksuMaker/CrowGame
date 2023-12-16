@@ -20,7 +20,7 @@ public class BeginningCinematicCamera : MonoBehaviour
         yield return new WaitForSeconds(3f);
         friendCrow.GetComponent<FriendCrowFly>().crowFly = true;
         yield return new WaitForSeconds(0.5f);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         crowCam1.m_Priority = 0;
 
 
